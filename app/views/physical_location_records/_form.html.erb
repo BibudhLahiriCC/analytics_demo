@@ -1,0 +1,17 @@
+<%= form_for(@physical_location_record) do |f| %>
+  <% if @physical_location_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@physical_location_record.errors.count, "error") %> prohibited this physical_location_record from being saved:</h2>
+
+      <ul>
+      <% @physical_location_record.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
