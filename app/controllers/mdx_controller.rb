@@ -6,10 +6,6 @@ class MdxController < ApplicationController
       #@result is of type Mondrian::OLAP::Result.
       #@raw_cell_set in Result class is of type
       #org.olap4j.CellSet.
-      puts @result.axes_count
-      puts @result.axis_names
-      puts @result.axis_full_names
-      puts @result.axis_members
       format_result
     end
   end

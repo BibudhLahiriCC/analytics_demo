@@ -46,6 +46,34 @@ class Dwh
       end #end dimension
       measure 'People', :column => 'person_id', :datatype => "Integer", :aggregator => 'count'
       end #end cube
+
+      cube 'DaysSinceLastVisit' do
+      table 'days_since_last_visit'
+      dimension 'HistogramBucket' do
+        hierarchy :has_all => true do
+          level :name => 'HistBucket', :type => 'Numeric' do
+            key_expression do
+              sql "n_days_since_last_visit/7"
+            end #end key_expression
+            name_expression do
+              sql "to_char(n_days_since_last_visit/7, '999')",
+                  :dialect => 'postgresql'
+            end
+          end #end level
+        end #end hierarchy
+      end #end dimension
+      dimension 'Gender' do
+        #creating a degenerate dimension
+        hierarchy :has_all => true do
+          level :name => 'Gender', :column => 'gender',
+                :unique_members => true
+        end #end hierarchy
+      end #end dimension
+      measure 'Children', :column => 'person_id',
+              :datatype => "Integer", :aggregator => 'count'
+      end #end cube
+
+
   end #end schema
 
   def self.schema; @schema; end

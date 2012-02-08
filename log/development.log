@@ -2748,3 +2748,226 @@ ActionController::RoutingError (No route matches "/notifications/count"):
   
 
 Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@mondrian-olap/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/mdx/" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 11:57:40 -0500 2012
+  Processing by MdxController#index as HTML
+Rendered mdx/index.html.haml within layouts/application (72.0ms)
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:03:30 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Completed 500 Internal Server Error in 1563ms
+
+NativeException (mondrian.olap.MondrianException: Mondrian Error:Internal error: Error while executing query [select {[Measures].[Children]} ON COLUMNS,
+  {[HistogramBucket].Members} ON ROWS
+from [DaysSinceLastVisit]
+]):
+  app/controllers/mdx_controller.rb:5:in `index'
+
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (63.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (81.0ms)
+
+
+Started GET "/mdx/" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:05:59 -0500 2012
+
+ActiveRecord::JDBCError (The driver encountered an unknown error: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "indcs"):
+  
+
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.0ms)
+
+
+Started GET "/mdx/" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:06:50 -0500 2012
+  Processing by MdxController#index as HTML
+Rendered mdx/index.html.haml within layouts/application (62.0ms)
+Completed 200 OK in 78ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:10:56 -0500 2012
+  Processing by MdxController#index as HTML
+Rendered mdx/index.html.haml within layouts/application (83.0ms)
+Completed 200 OK in 97ms (Views: 95.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:13:12 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (31.0ms)
+Completed 200 OK in 32989ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:13:45 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (17.0ms)
+Completed 200 OK in 448ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:15:59 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (15.0ms)
+Completed 200 OK in 7838ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:38:55 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (13.0ms)
+Completed 200 OK in 36122ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BFemale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:42:55 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Female])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (12.0ms)
+Completed 200 OK in 24744ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:47:06 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (12.0ms)
+Completed 200 OK in 7784ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BFemale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:47:40 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Female])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (10.0ms)
+Completed 200 OK in 258ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:48:11 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (7.0ms)
+Completed 200 OK in 244ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BFemale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:48:34 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Female])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (5.0ms)
+Completed 200 OK in 228ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BGender%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:52:25 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[Gender].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (3.0ms)
+Completed 200 OK in 39130ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BGender%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:54:16 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[Gender].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (2.0ms)
+Completed 200 OK in 176ms (Views: 132.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BGender%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 12:57:36 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[Gender].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (1.0ms)
+Completed 200 OK in 9770ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BGender%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0A+++WHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 14:25:41 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[Gender].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\n   WHERE ([Gender].[Male])", "table"=>"Execute"}
+Completed 500 Internal Server Error in 48ms
+
+NativeException (org.olap4j.OlapException: mondrian gave exception while parsing query):
+  app/controllers/mdx_controller.rb:5:in `index'
+
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (28.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (51.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BGender%5D.children%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:05:13 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[Gender].children} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (2.0ms)
+Completed 200 OK in 10339ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0A+++WHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:05:31 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\n   WHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (5.0ms)
+Completed 200 OK in 9731ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:06:20 -0500 2012
+  Processing by MdxController#index as HTML
+Rendered mdx/index.html.haml within layouts/application (68.0ms)
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0A+++WHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:10:09 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\n   WHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (32.0ms)
+Completed 200 OK in 44729ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D%0D%0A+++WHERE+(%5BGender%5D.%5BFemale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:15:04 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]\r\n   WHERE ([Gender].[Female])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (16.0ms)
+Completed 200 OK in 23072ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0A+++FROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:20:04 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\n   FROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Completed 500 Internal Server Error in 180ms
+
+NativeException (mondrian.olap.MondrianException: Mondrian Error:Internal error: Error while executing query [select {[Measures].[Children]} ON COLUMNS,
+  {[HistogramBucket].Members} ON ROWS
+from [DaysSinceLastVisit]
+]):
+  app/controllers/mdx_controller.rb:5:in `index'
+
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (42.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (63.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:20:25 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Completed 500 Internal Server Error in 161ms
+
+NativeException (mondrian.olap.MondrianException: Mondrian Error:Internal error: Error while executing query [select {[Measures].[Children]} ON COLUMNS,
+  {[HistogramBucket].Members} ON ROWS
+from [DaysSinceLastVisit]
+]):
+  app/controllers/mdx_controller.rb:5:in `index'
+
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A+++%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Tue Feb 07 15:22:08 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n   {[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Completed 500 Internal Server Error in 164ms
+
+NativeException (mondrian.olap.MondrianException: Mondrian Error:Internal error: Error while executing query [select {[Measures].[Children]} ON COLUMNS,
+  {[HistogramBucket].Members} ON ROWS
+from [DaysSinceLastVisit]
+]):
+  app/controllers/mdx_controller.rb:5:in `index'
+
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.0ms)
+Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.0ms)

@@ -4,11 +4,11 @@ development: &development
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  host: localhost
-  database: casebook2_development
+  host: sandbox.in.mycasebook.org
+  database: casebook2_sandbox
   pool: 5
-  username: bibudhlahiri
-  password:
+  username: indcs
+  password: turtle2sandal
   #socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
