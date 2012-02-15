@@ -56,7 +56,7 @@ class Dwh
               sql "n_days_since_last_visit/7"
             end #end key_expression
             name_expression do
-              sql "to_char(n_days_since_last_visit/7, '999')",
+              sql "to_char(7*(n_days_since_last_visit/7), '999') || '-' || to_char(7*(n_days_since_last_visit/7) + 6, '999')",
                   :dialect => 'postgresql'
             end
           end #end level

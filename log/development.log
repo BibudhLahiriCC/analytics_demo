@@ -2971,3 +2971,139 @@ from [DaysSinceLastVisit]
 Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
 Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.0ms)
 Rendered /Users/bibudhlahiri/.rvm/gems/jruby-1.6.5@analytics-demo/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.0ms)
+
+
+Started GET "/mdx/" for 0:0:0:0:0:0:0:1%0 at Wed Feb 08 15:37:32 -0500 2012
+  Processing by MdxController#index as HTML
+Rendered mdx/index.html.haml within layouts/application (73.0ms)
+Completed 200 OK in 96ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Wed Feb 08 15:42:37 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n{[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (34.0ms)
+Completed 200 OK in 55844ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BFemale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Wed Feb 08 15:46:15 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n{[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Female])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (17.0ms)
+Completed 200 OK in 27505ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BMale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Wed Feb 08 15:47:06 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n{[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Male])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (15.0ms)
+Completed 200 OK in 307ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D%0D%0AWHERE+(%5BGender%5D.%5BFemale%5D)&table=Execute" for 0:0:0:0:0:0:0:1%0 at Wed Feb 08 15:47:15 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n{[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]\r\nWHERE ([Gender].[Female])", "table"=>"Execute"}
+Rendered mdx/index.js.erb (14.0ms)
+Completed 200 OK in 312ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mdx/?q=SELECT+%7B%5BMeasures%5D.%5BChildren%5D%7D+ON+COLUMNS%2C%0D%0A%7B%5BHistogramBucket%5D.members%7D+ON+ROWS%0D%0AFROM+%5BDaysSinceLastVisit%5D&table=Execute" for 0:0:0:0:0:0:0:1%0 at Wed Feb 08 17:32:54 -0500 2012
+  Processing by MdxController#index as JS
+  Parameters: {"q"=>"SELECT {[Measures].[Children]} ON COLUMNS,\r\n{[HistogramBucket].members} ON ROWS\r\nFROM [DaysSinceLastVisit]", "table"=>"Execute"}
+Rendered mdx/index.js.erb (13.0ms)
+Completed 200 OK in 23566ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+  [1m[36mPerson Load (171.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPhysicalLocation::Placement Load (130.0ms)[0m  SELECT "out_of_home_locations".* FROM "out_of_home_locations" INNER JOIN "physical_location_records" ON "out_of_home_locations".id = "physical_location_records".physical_location_id WHERE "out_of_home_locations"."type" = 'PhysicalLocation::Placement' AND (("physical_location_records".person_id = 445492))
+  [1m[36mPerson Load (125.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPhysicalLocation::Placement Load (129.0ms)[0m  SELECT "out_of_home_locations".* FROM "out_of_home_locations" INNER JOIN "physical_location_records" ON "out_of_home_locations".id = "physical_location_records".physical_location_id WHERE "out_of_home_locations"."type" = 'PhysicalLocation::Placement' AND (("physical_location_records".person_id = 445492))
+  [1m[36mPerson Load (98.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[36mPerson Load (98.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPerson Load (274.0ms)[0m  SELECT "people".* FROM "people" INNER JOIN "physical_location_records" ON "people"."id" = "physical_location_records"."person_id" INNER JOIN "out_of_home_locations" ON "out_of_home_locations"."type" = 'PhysicalLocation::Placement' WHERE (type = 'PhysicalLocation::Placement' and date(start_date) <= '#{current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{current_date}'))
+ActiveRecord::JDBCError: ERROR: date/time value "current" is no longer supported
+  Position: 300: SELECT "people".* FROM "people" INNER JOIN "physical_location_records" ON "people"."id" = "physical_location_records"."person_id" INNER JOIN "out_of_home_locations" ON "out_of_home_locations"."type" = 'PhysicalLocation::Placement' WHERE (type = 'PhysicalLocation::Placement' and date(start_date) <= '#{current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{current_date}'))
+  [1m[36mPerson Load (199.0ms)[0m  [1mSELECT "people".* FROM "people" INNER JOIN "physical_location_records" ON "people"."id" = "physical_location_records"."person_id" INNER JOIN "out_of_home_locations" ON "out_of_home_locations"."type" = 'PhysicalLocation::Placement' WHERE (type = 'PhysicalLocation::Placement' and date(start_date) <= '#{current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{current_date}'))[0m
+ActiveRecord::JDBCError: ERROR: date/time value "current" is no longer supported
+  Position: 300: SELECT "people".* FROM "people" INNER JOIN "physical_location_records" ON "people"."id" = "physical_location_records"."person_id" INNER JOIN "out_of_home_locations" ON "out_of_home_locations"."type" = 'PhysicalLocation::Placement' WHERE (type = 'PhysicalLocation::Placement' and date(start_date) <= '#{current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{current_date}'))
+  [1m[36mPerson Load (95.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPhysicalLocation::Placement Load (211.0ms)[0m  SELECT "out_of_home_locations".* FROM "out_of_home_locations" INNER JOIN "physical_location_records" ON "out_of_home_locations".id = "physical_location_records".physical_location_id WHERE "out_of_home_locations"."type" = 'PhysicalLocation::Placement' AND (("physical_location_records".person_id = 445492)) AND (date(start_date) <= '#{@current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{@current_date}'))
+ActiveRecord::JDBCError: ERROR: date/time value "current" is no longer supported
+  Position: 332: SELECT "out_of_home_locations".* FROM "out_of_home_locations" INNER JOIN "physical_location_records" ON "out_of_home_locations".id = "physical_location_records".physical_location_id WHERE "out_of_home_locations"."type" = 'PhysicalLocation::Placement' AND (("physical_location_records".person_id = 445492)) AND (date(start_date) <= '#{@current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{@current_date}'))
+  [1m[36mPhysicalLocation::Placement Load (199.0ms)[0m  [1mSELECT "out_of_home_locations".* FROM "out_of_home_locations" INNER JOIN "physical_location_records" ON "out_of_home_locations".id = "physical_location_records".physical_location_id WHERE "out_of_home_locations"."type" = 'PhysicalLocation::Placement' AND (("physical_location_records".person_id = 445492)) AND (date(start_date) <= '#{@current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{@current_date}'))[0m
+ActiveRecord::JDBCError: ERROR: date/time value "current" is no longer supported
+  Position: 332: SELECT "out_of_home_locations".* FROM "out_of_home_locations" INNER JOIN "physical_location_records" ON "out_of_home_locations".id = "physical_location_records".physical_location_id WHERE "out_of_home_locations"."type" = 'PhysicalLocation::Placement' AND (("physical_location_records".person_id = 445492)) AND (date(start_date) <= '#{@current_date}' and (date(end_date) is NULL or date(out_of_home_locations.end_date) > '#{@current_date}'))
+  [1m[36mPerson Load (108.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPerson Load (209.0ms)[0m  select max(date(contacts.occurred_at)) from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '#{@current_date}'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '#{@current_date}')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ActiveRecord::JDBCError: ERROR: date/time value "current" is no longer supported
+  Position: 434: select max(date(contacts.occurred_at)) from people
+     inner join physical_location_records on physical_location_records.person_id = people.id
+                and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+                inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+                and date(out_of_home_locations.start_date) <= '#{@current_date}'
+                and (date(out_of_home_locations.end_date) is NULL
+                or date(out_of_home_locations.end_date) > '#{@current_date}')
+     inner join contact_people on contact_people.person_id = people.id
+     inner join contacts on contacts.id = contact_people.contact_id
+                and contacts.mode like 'Face to Face%'
+  [1m[36mPerson Load (194.0ms)[0m  [1mselect max(date(contacts.occurred_at)) from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '#{@current_date}'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '#{@current_date}')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'[0m
+ActiveRecord::JDBCError: ERROR: date/time value "current" is no longer supported
+  Position: 434: select max(date(contacts.occurred_at)) from people
+     inner join physical_location_records on physical_location_records.person_id = people.id
+                and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+                inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+                and date(out_of_home_locations.start_date) <= '#{@current_date}'
+                and (date(out_of_home_locations.end_date) is NULL
+                or date(out_of_home_locations.end_date) > '#{@current_date}')
+     inner join contact_people on contact_people.person_id = people.id
+     inner join contacts on contacts.id = contact_people.contact_id
+                and contacts.mode like 'Face to Face%'
+  [1m[36mPerson Load (120.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPerson Load (30218.0ms)[0m  select max(date(contacts.occurred_at)) from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+  [1m[36mPerson Load (128.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mPerson Load (10907.0ms)[0m  select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+Could not log "sql.active_record" event. IRB::Abort: abort then interrupt!!
+  [1m[36mPerson Load (10898.0ms)[0m  [1mselect max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'[0m
