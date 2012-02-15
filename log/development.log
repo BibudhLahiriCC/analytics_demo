@@ -3107,3 +3107,144 @@ Could not log "sql.active_record" event. IRB::Abort: abort then interrupt!!
  inner join contact_people on contact_people.person_id = people.id
  inner join contacts on contacts.id = contact_people.contact_id
  and contacts.mode like 'Face to Face%'[0m
+  [1m[36mPerson Load (160.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1[0m
+  [1m[35mSQL (2751.0ms)[0m   select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 445492
+  [1m[36mSQL (2789.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 445492
+[0m
+  [1m[35mPerson Load (101.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1
+  [1m[36mSQL (2631.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 445492
+[0m
+  [1m[35mPerson Load (153.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1
+  [1m[36mSQL (2728.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-14'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-14')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 445492
+[0m
+  [1m[35mPerson Load (919.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1
+  [1m[36mSQL (319.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= 2012-02-15
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > 2012-02-15)
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 445492
+[0m
+ActiveRecord::JDBCError: ERROR: operator does not exist: date <= integer
+  Hint: No operator matches the given name and argument type(s). You might need to add explicit type casts.
+  Position: 450:      select max(date(contacts.occurred_at)) lastVisitDate from people
+     inner join physical_location_records on physical_location_records.person_id = people.id
+                and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+                inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+                and date(out_of_home_locations.start_date) <= 2012-02-15
+                and (date(out_of_home_locations.end_date) is NULL
+                or date(out_of_home_locations.end_date) > 2012-02-15)
+     inner join contact_people on contact_people.person_id = people.id
+     inner join contacts on contacts.id = contact_people.contact_id
+                and contacts.mode like 'Face to Face%'
+                where people.id = 445492
+  [1m[35mPerson Load (134.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 445492 LIMIT 1
+  [1m[36mSQL (2764.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-15'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-15')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 445492
+[0m
+  [1m[35mPerson Load (134.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 1269301 LIMIT 1
+  [1m[36mSQL (2631.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-15'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-15')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 1269301
+[0m
+  [1m[35mPerson Load (128.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 745006 LIMIT 1
+  [1m[36mSQL (2675.0ms)[0m  [1m select max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-15'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-15')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 745006
+[0m
+  [1m[35mPerson Load (133.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 745006 LIMIT 1
+  [1m[36mSQL (2642.0ms)[0m  [1m select '2012-02-15' - max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-15'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-15')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 745006
+[0m
+  [1m[35mPerson Load (105.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = 745006 LIMIT 1
+  [1m[36mSQL (2634.0ms)[0m  [1m select '2012-02-15' - max(date(contacts.occurred_at)) lastVisitDate from people
+ inner join physical_location_records on physical_location_records.person_id = people.id
+ and physical_location_records.physical_location_type = 'PhysicalLocation::Placement'
+ inner join out_of_home_locations on out_of_home_locations.id = physical_location_records.physical_location_id
+ and date(out_of_home_locations.start_date) <= '2012-02-15'
+ and (date(out_of_home_locations.end_date) is NULL
+ or date(out_of_home_locations.end_date) > '2012-02-15')
+ inner join contact_people on contact_people.person_id = people.id
+ inner join contacts on contacts.id = contact_people.contact_id
+ and contacts.mode like 'Face to Face%'
+ where people.id = 745006
+[0m
